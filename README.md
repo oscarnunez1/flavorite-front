@@ -1,75 +1,42 @@
-# Decoupled PERN Stack with JWT Auth Template - Front End
+# Flavorite
 
-This is the front end of a decoupled PERN Stack app that includes JWT Authentication.
+Flavorite is a web application that allows users to create, view, update, and delete their favorite food items. Users can sign up for an account, log in, and access their account to manage their food items. They can also browse food items created by other users.
 
-When combined with the back end found [here](https://github.com/SEI-Remote/decoupled-pern-jwt-auth-template-back-end-cjs), you'll have all you need to build a full stack PERN app!
+## Getting Started
 
-Use this to go build things! 🚀
+## Technologies used 💾
+<!-- ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
-## To Use This Template
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
-**Replace `<name-of-your-app-here>`, including the `<` and `>` in the commands below with the name of your app!**
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-```bash
-git clone https://github.com/SEI-Remote/decoupled-pern-jwt-auth-template-front-end-ts <name-of-your-app-here>-front-end
-cd <name-of-your-app-here>-front-end
-code .
-```
+![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 
-With the project open in VS Code, open a terminal and run:
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
-```bash
-rm -rf .git
-```
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
-Re-initialize a git repository:
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+  -->
 
-```bash
-git init
-```
+## Latest Modifications 🧹
+- 
+- 
+- 
+- 
+- 
+- 
 
-Create a repo for this project on GitHub and add that remote to your project with:
+## Ice Box 🧊
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
 
-```bash
-git remote add origin your-repo-URL-here
-```
-
-Run `npm i` to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-touch a `.env` file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-VITE_BACK_END_SERVER_URL=http://localhost:3001
-```
-
-> 🚨 DO NOT place secrets in this `.env` file. The contents of this file WILL be exposed to site visitors. We are only using the front-end .env to create variables specific to the environment the application is running in.
-
-Ensure the project starts up with:
-
-```bash
-npm run dev
-```
-
-Delete this README.md, then make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push origin main
-```
-
-You're done!
+## Special Thanks
