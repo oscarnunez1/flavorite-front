@@ -5,7 +5,7 @@ import * as tokenService from './tokenService'
 import { Meal } from "../types/models"
 
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/meals`
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/meals`
 
 async function index(): Promise<Meal[]> {
   try {
