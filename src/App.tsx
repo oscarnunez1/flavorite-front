@@ -21,6 +21,7 @@ import './App.css'
 
 // types
 import { User } from './types/models'
+import MealList from './pages/MealList/MealList'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
@@ -49,6 +50,14 @@ function App(): JSX.Element {
         <Route
           path="/login"
           element={<Login handleAuthEvt={handleAuthEvt} />}
+        />
+        <Route
+          path="/meals"
+          element={
+            <ProtectedRoute user={user}>
+              <MealList />
+            </ProtectedRoute>
+          }
         />
         <Route
           path="/profiles"
