@@ -4,6 +4,16 @@
 
 /* ---------===== auth models =====--------- */
 
+export interface Meal {
+  id: number;
+  name: string;
+  description: string;
+  photo: string;
+  profileId: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface Profile {
   name: string;
   photo?: string;
