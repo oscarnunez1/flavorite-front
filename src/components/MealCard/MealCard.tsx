@@ -1,5 +1,5 @@
 // assets
-import defaultPic from '../../assets/icons/meal.png'
+// import defaultPic from '../../assets/icons/meal.png'
 import styles from './MealCard.module.css'
 
 // types
@@ -12,12 +12,13 @@ interface MealCardProps {
 const MealCard = (props: MealCardProps): JSX.Element => {
   const { meal } = props;
 
-  const mealPic = meal.photo ? meal.photo : defaultPic;
+  // const mealPic = meal.photo ? meal.photo : defaultPic;
 
   return (
     <article className={styles.container}>
-      <img src={mealPic} alt={`${meal.name}'s image`} />
+      <img src={meal.photo} alt={`${meal.name}'s image`} />
       <h1>{meal.name}</h1>
+      <h3>{meal.description}</h3>
     </article>
   )
 }
