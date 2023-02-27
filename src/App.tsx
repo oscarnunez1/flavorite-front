@@ -18,6 +18,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as mealService from './services/mealService'
 
+
 // stylesheets
 import './App.css'
 
@@ -71,7 +72,7 @@ function App(): JSX.Element {
           path="/meals"
           element={
             <ProtectedRoute user={user}>
-              <MealList />
+              <MealList meals={meals}/>
             </ProtectedRoute>
           }
         />

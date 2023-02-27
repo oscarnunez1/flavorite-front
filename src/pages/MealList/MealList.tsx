@@ -1,10 +1,13 @@
 import styles from './MealList.module.css';
+import { Meal } from '../../types/models';
 
 interface MealListProps {
-  // Define the type of the props object
+  meals: Meal[];
 }
 
 const MealList = (props: MealListProps): JSX.Element => {
+  console.log("MealList props:", props);
+  
   return (
     <div className={styles.container}>
       Meal List
