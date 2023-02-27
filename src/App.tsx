@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Meals from './pages/Meals/Meals'
 import NewMeal from './pages/NewMeal/NewMeal'
+import EditMeal from './pages/EditMeal/EditMeal'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -63,6 +64,7 @@ function App(): JSX.Element {
   const handleUpdateMeal = async (mealData: Meal): Promise<void> => {
     const updatedMeal = await mealService.updateMeal(mealData)
     setMeals(meals.map((m) => mealData.id === m.id ? updatedMeal : m))
+    navigate('')
   }
 
 
@@ -111,6 +113,11 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
+        <Route path="/meals/:id/edit" element={
+          <ProtectedRoute user={user}>
+            <EditMeal handleUpdateMeal={handleUpdateMeal}/>
+          </ProtectedRoute>
+        } />
       </Routes>
     </>
   )
