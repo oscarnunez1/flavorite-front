@@ -8,7 +8,8 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
-import MealList from './pages/MealList/MealList'
+import Meals from './pages/Meals/Meals'
+import NewMeal from './pages/NewMeal/NewMeal'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -22,25 +23,14 @@ import * as mealService from './services/mealService'
 import './App.css'
 
 // types
-import { User } from './types/models'
-import { Meal } from './types/models'
+import { User, Meal } from './types/models'
+import { MealFormData } from './types/forms'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
   
   const [user, setUser] = useState<User | null>(authService.getUser())
-
   const [meals, setMeals] = useState<Meal[]>([])
-
-  const handleLogout = (): void => {
-    authService.logout()
-    setUser(null)
-    navigate('/')
-  }
-
-  const handleAuthEvt = (): void => {
-    setUser(authService.getUser())
-  }
 
   useEffect((): void => {
     const fetchMeals = async (): Promise<void> => {
@@ -54,7 +44,17 @@ function App(): JSX.Element {
     if (user) fetchMeals()
   }, [user])
 
-  const handleAddMeal = async (mealData: any): Promise<void> => {
+  const handleLogout = (): void => {
+    authService.logout()
+    setUser(null)
+    navigate('/')
+  }
+
+  const handleAuthEvt = (): void => {
+    setUser(authService.getUser())
+  }
+
+  const handleAddMeal = async (mealData: MealFormData): Promise<void> => {
     const newMeal = await mealService.createMeal(mealData)
     setMeals([newMeal, ...meals])
     navigate('/meals')
@@ -78,7 +78,15 @@ function App(): JSX.Element {
           path="/meals"
           element={
             <ProtectedRoute user={user}>
-              <MealList meals={meals}/>
+              <Meals meals={meals}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/meals/new"
+          element={
+            <ProtectedRoute user={user}>
+              <NewMeal handleAddMeal={handleAddMeal}/>
             </ProtectedRoute>
           }
         />

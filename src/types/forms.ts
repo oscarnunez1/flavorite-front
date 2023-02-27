@@ -1,5 +1,9 @@
 /* ---------==== custom forms ====--------- */
-
+export interface MealFormData {
+  name: string,
+  description: string,
+  photo: string
+}
 
 
 /* ---------===== auth forms =====--------- */
