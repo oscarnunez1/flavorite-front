@@ -60,6 +60,11 @@ function App(): JSX.Element {
     navigate('/meals')
   }
 
+  const handleUpdateMeal = async (mealData: Meal): Promise<void> => {
+    const updatedMeal = await mealService.updateMeal(mealData)
+    setMeals(meals.map((m) => mealData.id === m.id ? updatedMeal : m))
+  }
+
 
   return (
     <>
