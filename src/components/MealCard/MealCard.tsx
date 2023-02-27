@@ -13,7 +13,7 @@ const MealCard = (props: MealCardProps): JSX.Element => {
 
   return (
     <article className={styles.container}>
-      <img src={meal.photo} alt={`${meal.name}'s image`} />
+      <img src={meal.photo} alt={`${meal.name}'s image`}  />
       <h1>{meal.name}</h1>
       <h3>{meal.description}</h3>
     </article>

@@ -3,11 +3,12 @@ import * as tokenService from './tokenService'
 
 // types
 import { Meal } from "../types/models"
+import { MealFormData } from '../types/forms'
 
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/meals`
 
-async function getAllMeals(): Promise<Meal[]> {
+const getAllMeals = async (): Promise<Meal[]> => {
   try {
     const res = await fetch(BASE_URL, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
@@ -19,7 +20,7 @@ async function getAllMeals(): Promise<Meal[]> {
   }
 }
 
-async function createMeal(formData: any): Promise<any> {
+const createMeal = async (mealData: MealFormData): Promise<any> => {
   try {
     const res = await fetch(BASE_URL, {
       method: 'POST',
@@ -27,14 +28,32 @@ async function createMeal(formData: any): Promise<any> {
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(mealData)
     })
     return await res.json() as Meal
   } catch (error) {
     console.log(error)
+    throw error
+  }
+}
+
+
+const updateMeal = async (mealData: Meal): Promise<Meal> => {
+  try {
+    const res = await fetch(`${BASE_URL}/${mealData.id}`, {
+      method: 'PUT', 
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(mealData)
+    })
+    return res.json()
+  } catch (error) {
+    throw error
   }
 }
 
 
 
-export { getAllMeals, createMeal, }
+export { getAllMeals, createMeal, updateMeal }
