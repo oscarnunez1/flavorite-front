@@ -18,7 +18,6 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as mealService from './services/mealService'
 
-
 // stylesheets
 import './App.css'
 
@@ -30,19 +29,8 @@ function App(): JSX.Element {
   const navigate = useNavigate()
   
   const [user, setUser] = useState<User | null>(authService.getUser())
-  const [meals, setMeals] = useState<Meal[]>([])
 
-  useEffect((): void => {
-    const fetchMeals = async (): Promise<void> => {
-      try {
-        const mealData: Meal[] = await mealService.index()
-        setMeals(mealData)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    if (user) fetchMeals()
-  }, [user])
+  const [meals, setMeals] = useState<Meal[]>([])
 
   const handleLogout = (): void => {
     authService.logout()
@@ -52,6 +40,24 @@ function App(): JSX.Element {
 
   const handleAuthEvt = (): void => {
     setUser(authService.getUser())
+  }
+
+  useEffect((): void => {
+    const fetchMeals = async (): Promise<void> => {
+      try {
+        const mealData: Meal[] = await mealService.getAllMeals()
+        setMeals(mealData)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    if (user) fetchMeals()
+  }, [user])
+
+  const handleAddMeal = async (mealData: any): Promise<void> => {
+    const newMeal = await mealService.createMeal(mealData)
+    setMeals([newMeal, ...meals])
+    navigate('/meals')
   }
 
 
