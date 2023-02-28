@@ -1,5 +1,29 @@
 .container {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.floatingLogo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 40px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+

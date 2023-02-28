@@ -1,5 +1,7 @@
 # Flavorite
 
+![Flavorite](/public/flavorite.png)
+
 Flavorite is a web application that allows users to create, view, update, and delete their favorite food items. Users can sign up for an account, log in, and access their account to manage their food items. They can also browse food items created by other users.
 
 ## Getting Started
@@ -30,18 +32,12 @@ Flavorite is a web application that allows users to create, view, update, and de
 ![VS Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 ## Latest Modifications 🧹
-- 
-- 
-- 
-- 
-- 
-- 
+- Logo and label added to app.
+- Edit and delete abilties for logged in users.
+- Navbar buttons for smoother navigation.
 
 ## Ice Box 🧊
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-
-## Special Thanks
+- [ ] Ability to add likes to a meal.
+- [ ] Option to click on a logged in user's profile.
+- [ ] Meal/Food categories options.
+- [ ] Search bar.

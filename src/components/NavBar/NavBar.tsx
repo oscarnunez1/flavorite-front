@@ -1,65 +1,41 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { User } from '../../types/models';
-import './NavBar.css';
-import logo from '/flavorite-logo.png'
+import { Link } from 'react-router-dom'
+import logo from '/logo.png'
+import { User } from '../../types/models'
+import label from '/label.png'
+import './NavBar.css'
 
 interface NavBarProps {
   user: User | null;
   handleLogout: () => void;
 }
 
-const NavBar = (props: NavBarProps): JSX.Element => {
-  const { user, handleLogout } = props;
-  const [showMenu, setShowMenu] = useState(false);
-
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
-
+const NavBar = ({ user, handleLogout }: NavBarProps): JSX.Element => {
   return (
-    <nav className="nav-bar">
-      <div className="nav-bar-container">
-        <NavLink to="/" className="logo">
-          <img src={logo} alt="app-logo" className='app-logo'/>
-        </NavLink>
-        <button className="hamburger-menu" onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul className={`nav-links ${showMenu ? 'show-menu' : ''}`}>
-          {user && (
-            <>
-              <li className="nav-link">Welcome, {user.name}</li>
-              <li className="nav-link">
-                <NavLink to="/meals">Meals</NavLink>
-              </li>
-              <li className="nav-link">
-                <NavLink to="/meals/new">New Meal</NavLink>
-              </li>
-              <li className="nav-link">
-                <NavLink to="/change-password">Change Password</NavLink>
-              </li>
-              <li className="nav-link" onClick={handleLogout}>
-                LOG OUT
-              </li>
-            </>
-          )}
-          {!user && (
-            <>
-              <li className="nav-link">
-                <NavLink to="/login">Log In</NavLink>
-              </li>
-              <li className="nav-link">
-                <NavLink to="/signup">Sign Up</NavLink>
-              </li>
-            </>
-          )}
-        </ul>
+    <nav>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
+        <img src={label} alt="label" className='navbar-label' style={{ marginLeft: '10px' }} />
       </div>
+      <ul>
+        {user ?
+          <>
+            <li><Link to="/meals">Meals</Link></li>
+            <li><Link to="/new-meals">New Meals</Link></li>
+            <li>Welcome, {user.name}</li>
+            <li><Link to="/" onClick={handleLogout}>LOG OUT</Link></li>
+          </>
+        :
+          <>
+            <li><Link to="/login">LOGIN</Link></li>
+            <li><Link to="/signup">SIGN UP</Link></li>
+          </>
+        }
+      </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
+

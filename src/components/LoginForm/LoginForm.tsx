@@ -32,7 +32,7 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
     try {
       await authService.login(formData)
       handleAuthEvt()
-      navigate('/')
+      navigate('/meals')
     } catch (err) {
       console.log(err)
       handleErrMsg(err, updateMessage)
