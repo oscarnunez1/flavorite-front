@@ -63,9 +63,10 @@ function App(): JSX.Element {
 
   const handleUpdateMeal = async (mealData: Meal): Promise<void> => {
     const updatedMeal = await mealService.updateMeal(mealData)
-    setMeals(meals.map((m) => mealData.id === m.id ? updatedMeal : m))
+    setMeals(meals.map((m) => m.id === updatedMeal.id ? updatedMeal : m))
     navigate('')
   }
+  
 
 
   return (

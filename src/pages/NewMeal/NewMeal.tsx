@@ -1,41 +1,36 @@
-import { useState } from "react"
+import { useState } from "react";
+import styles from './NewMeal.module.css';
 
-import styles from './NewMeal.module.css'
+import { MealFormData } from '../../types/forms';
 
 interface NewMealProps {
-  handleAddMeal: (meal: MealFormData) => void
+  handleAddMeal: (meal: MealFormData) => void;
 }
 
-interface MealFormData {
-  name: string;
-  description: string;
-  photo: string
-}
-
-const NewMeal: React.FC<NewMealProps> = (props) => {
+const NewMeal: React.FC<NewMealProps> = ({ handleAddMeal }) => {
   const [form, setForm] = useState<MealFormData>({
     name: '',
     description: '',
     photo: ''
-  })
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+    const { name, value } = e.target;
     setForm(prevState => ({
       ...prevState,
       [name]: value
-    }))
-  }
+    }));
+  };
 
-  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
-    evt.preventDefault()
-    props.handleAddMeal(form)
+  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>): void => {
+    evt.preventDefault();
+    handleAddMeal(form);
     setForm({
       name: '',
       description: '',
       photo: ''
-    })
-  }
+    });
+  };
 
   return (
     <form autoComplete="off" onSubmit={handleSubmit} className={styles.container}>

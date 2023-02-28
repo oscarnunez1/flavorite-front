@@ -10,13 +10,14 @@ interface MealCardProps {
 
 const MealCard = (props: MealCardProps): JSX.Element => {
   const { meal } = props;
-
+  console.log("THE MEAL", meal);
+  
   return (
     <article className={styles.container}>
       <img src={meal.photo} alt={`${meal.name}'s image`} />
       <h1>{meal.name}</h1>
       <h3>{meal.description}</h3>
-      <Link to={`/meals/${meal.id}/edit`}>Edit Meal</Link>
+      <Link to={`/meals/${meal.id}/edit`} state={{meal}}>Edit Meal</Link>
     </article>
   )
 }

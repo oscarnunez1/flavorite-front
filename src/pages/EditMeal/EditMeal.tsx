@@ -1,51 +1,78 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Meal } from '../../types/models';
-import { MealFormData } from '../../types/forms';
-import { getMealById, updateMeal } from '../../services/mealService';
+import { useState } from "react";
+import { Meal } from "../../types/models";
+import { MealFormData } from "../../types/forms";
+import { useLocation } from "react-router";
+
+import styles from "./EditMeal.module.css"
 
 interface EditMealProps {
   handleUpdateMeal: (mealData: Meal) => Promise<void>;
 }
 
-const mealService = { getMealById, updateMeal };
-
-const EditMeal = (props: EditMealProps): JSX.Element => {
+const EditMealForm = (props: EditMealProps): JSX.Element => {
+  const location = useLocation()
+  const { meal } = location.state
   const { handleUpdateMeal } = props;
-  const { id } = useParams<{ id: string }>();
-  const [meal, setMeal] = useState<Meal | null>(null);
+  console.log("MEAL", meal);
+  
+  const [formData, setFormData] = useState<MealFormData>({
+    name: meal.name,
+    description: meal.description,
+    photo: meal.photo,
+  });
 
-  useEffect(() => {
-    const fetchMeal = async (): Promise<void> => {
-      const mealData = await mealService.getMealById(id);
-      setMeal(mealData);
-    };
-    fetchMeal();
-  }, [id]);
+  const handleChange = (
+    evt: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value });
+  };
 
-  const handleSubmit = async (formData: MealFormData): Promise<void> => {
-    const updatedMeal = await mealService.updateMeal({ ...meal, ...formData });
+  const handleSubmit = async (evt: React.FormEvent): Promise<void> => {
+    evt.preventDefault();
+    const updatedMeal = { ...meal, ...formData };
     await handleUpdateMeal(updatedMeal);
   };
 
-  if (!meal) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <div>
-      <h1>Edit Meal</h1>
-      <form onSubmit={(e) => { e.preventDefault(); handleSubmit(e.target); }}>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" defaultValue={meal.name} required />
-        <label htmlFor="description">Description</label>
-        <textarea name="description" defaultValue={meal.description} required></textarea>
-        <label htmlFor="photo">Photo</label>
-        <input type="url" name="photo" defaultValue={meal.photo} required />
-        <button type="submit">Save</button>
+    <main className={styles.container}>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            value={formData.name}
+            name="name"
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="description">Description</label>
+          <textarea
+            value={formData.description}
+            name="description"
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+        <div>
+          <label htmlFor="photo-upload">Upload Photo</label>
+          <input
+            type="url"
+            value={formData.photo}
+            name="photo"
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <button type="submit">Save</button>
+        </div>
       </form>
-    </div>
+    </main>
   );
 };
 
-export default EditMeal;
+export default EditMealForm;
+
+

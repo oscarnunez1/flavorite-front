@@ -20,18 +20,6 @@ const getAllMeals = async (): Promise<Meal[]> => {
   }
 }
 
-const getMealById = async (id: string): Promise<Meal> => {
-  try {
-    const res = await fetch(`${BASE_URL}/${id}`, {
-      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
-    })
-    return await res.json() as Meal
-  } catch (error) {
-    console.log(error)
-    throw error
-  }
-}
-
 const createMeal = async (mealData: MealFormData): Promise<any> => {
   try {
     const res = await fetch(BASE_URL, {

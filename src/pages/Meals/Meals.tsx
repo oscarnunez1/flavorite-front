@@ -14,7 +14,7 @@ const Meals = (props: MealProps): JSX.Element => {
 
   const { meals } = props
 
-  if (!meals.length) return <h2>Ready To Create A Meal?</h2>
+  if (!meals.length) return <h2>Loading</h2>
 
   return (
     <div className={styles.container}>
