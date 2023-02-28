@@ -59,7 +59,7 @@ const deleteMeal = async (id: number): Promise<void> => {
     const res = await fetch(`${BASE_URL}/${id}`, {
       method: 'DELETE',
       headers: {
-        'Authorization': 'Bearer ${tokenService.getToken()}'
+        'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
     res.json()

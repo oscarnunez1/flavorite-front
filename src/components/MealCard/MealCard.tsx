@@ -17,7 +17,7 @@ const MealCard = (props: MealCardProps): JSX.Element => {
       <img src={meal.photo} alt={`${meal.name}'s image`} />
       <h1>{meal.name}</h1>
       <h3>{meal.description}</h3>
-      <Link to={`/meals/${meal.id}/edit`} state={{meal}}>Edit Meal</Link>
+      <Link type='button' to={`/meals/${meal.id}/edit`} state={{meal}}>Edit Meal</Link>
       <button onClick={() => handleDeleteMeal(meal.id)}>Delete</button>
     </article>
   )
