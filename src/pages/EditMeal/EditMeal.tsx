@@ -13,7 +13,6 @@ const EditMealForm = (props: EditMealProps): JSX.Element => {
   const location = useLocation()
   const { meal } = location.state
   const { handleUpdateMeal } = props;
-  console.log("MEAL", meal);
   
   const [formData, setFormData] = useState<MealFormData>({
     name: meal.name,

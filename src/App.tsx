@@ -56,8 +56,8 @@ function App(): JSX.Element {
   }
 
   const handleAddMeal = async (mealData: MealFormData): Promise<void> => {
-    const newMeal = await mealService.createMeal(mealData)
-    setMeals([newMeal, ...meals])
+    const mealsData = await mealService.createMeal(mealData)
+    setMeals(mealsData)
     navigate('/meals')
   }
 
@@ -71,7 +71,6 @@ function App(): JSX.Element {
     await mealService.deleteMeal(id)
     setMeals(meals.filter(m => m.id !== id))
   }
-  console.log("MEALS", meals);
   
   return (
     <>
@@ -90,7 +89,7 @@ function App(): JSX.Element {
           path="/meals"
           element={
             <ProtectedRoute user={user}>
-              <Meals meals={meals} handleDeleteMeal={handleDeleteMeal}/>
+              <Meals meals={meals} user={user} handleDeleteMeal={handleDeleteMeal}/>
             </ProtectedRoute>
           }
         />

@@ -30,7 +30,7 @@ const createMeal = async (mealData: MealFormData): Promise<any> => {
       },
       body: JSON.stringify(mealData)
     })
-    return await res.json() as Meal
+    return await res.json() as Meal[]
   } catch (error) {
     console.log(error)
     throw error

@@ -3,19 +3,21 @@ import { Link } from 'react-router-dom';
 import styles from './MealCard.module.css'
 import defaultPic from '../../assets/icons/profile.png'
 
-import { Meal, Profile } from '../../types/models'
+import { Meal, User } from '../../types/models'
 
 interface MealCardProps {
   meal: Meal;
+  user: User | null;
   handleDeleteMeal: (id: number) => Promise<void>
 }
 
 const MealCard = (props: MealCardProps): JSX.Element => {
-  const { meal, handleDeleteMeal } = props;
+  const { meal, handleDeleteMeal, user } = props;
 
-  console.log("PROFILE", meal.profile)
+  const profilePic = meal.profile?.photo ? meal.profile.photo : defaultPic
 
-  const profilePic = meal.profile.photo ? meal.profile.photo : defaultPic
+  console.log("PROFILE INFO: ", user?.profile.id, meal.profile.id);
+  
 
   return (
     <article className={styles.container}>
@@ -23,8 +25,13 @@ const MealCard = (props: MealCardProps): JSX.Element => {
       <img src={profilePic} alt={`${meal.profile.name}'s avatar`} />
       <h1>{meal.name}</h1>
       <h3>{meal.description}</h3>
-      <Link type='button' to={`/meals/${meal.id}/edit`} state={{meal}}>Edit Meal</Link>
-      <button onClick={() => handleDeleteMeal(meal.id)}>Delete</button>
+      {meal.profile.id === user?.profile.id && (
+        <>
+          <Link type='button' to={`/meals/${meal.id}/edit`} state={{meal}}>Edit Meal</Link>
+          <button onClick={() => handleDeleteMeal(meal.id)}>Delete</button>
+        </>
+      )}
+
     </article>
   )
 }
