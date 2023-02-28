@@ -71,7 +71,8 @@ function App(): JSX.Element {
     await mealService.deleteMeal(id)
     setMeals(meals.filter(m => m.id !== id))
   }
-
+  console.log("MEALS", meals);
+  
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />

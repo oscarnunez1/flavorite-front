@@ -9,6 +9,11 @@ export interface Meal {
   name: string;
   description: string;
   photo: string;
+  profile: { 
+    id: number;
+    name: string;
+    photo: string;
+  };
   profileId: number;
   createdAt: string;
   updatedAt: string;
