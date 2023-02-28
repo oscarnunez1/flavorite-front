@@ -63,11 +63,14 @@ function App(): JSX.Element {
 
   const handleUpdateMeal = async (mealData: Meal): Promise<void> => {
     const updatedMeal = await mealService.updateMeal(mealData)
-    setMeals(meals.map((m) => m.id === updatedMeal.id ? updatedMeal : m))
-    navigate('')
+    setMeals(meals.map((m) => mealData.id === m.id ? updatedMeal : m))
+    navigate('/meals')
   }
-  
 
+  const handleDeleteMeal = async (id: number): Promise<void> => {
+    await mealService.deleteMeal(id)
+    setMeals(meals.filter(m => m.id !== id))
+  }
 
   return (
     <>
@@ -86,7 +89,7 @@ function App(): JSX.Element {
           path="/meals"
           element={
             <ProtectedRoute user={user}>
-              <Meals meals={meals}/>
+              <Meals meals={meals} handleDeleteMeal={handleDeleteMeal}/>
             </ProtectedRoute>
           }
         />

@@ -6,11 +6,11 @@ import { Meal } from '../../types/models'
 
 interface MealCardProps {
   meal: Meal;
+  handleDeleteMeal: (id: number) => Promise<void>
 }
 
 const MealCard = (props: MealCardProps): JSX.Element => {
-  const { meal } = props;
-  console.log("THE MEAL", meal);
+  const { meal, handleDeleteMeal } = props;
   
   return (
     <article className={styles.container}>
@@ -18,6 +18,7 @@ const MealCard = (props: MealCardProps): JSX.Element => {
       <h1>{meal.name}</h1>
       <h3>{meal.description}</h3>
       <Link to={`/meals/${meal.id}/edit`} state={{meal}}>Edit Meal</Link>
+      <button onClick={() => handleDeleteMeal(meal.id)}>Delete</button>
     </article>
   )
 }

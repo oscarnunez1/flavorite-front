@@ -54,4 +54,19 @@ const updateMeal = async (mealData: Meal): Promise<Meal> => {
   }
 }
 
-export { getAllMeals, getMealById, createMeal, updateMeal }
+const deleteMeal = async (id: number): Promise<void> => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': 'Bearer ${tokenService.getToken()}'
+      }
+    })
+    res.json()
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
+}
+
+export { getAllMeals, createMeal, updateMeal, deleteMeal }
