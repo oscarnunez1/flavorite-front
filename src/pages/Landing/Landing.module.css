@@ -15,9 +15,10 @@
 }
 
 .floatingLogo {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   margin-bottom: 40px;
+  animation: float 1.5s ease-in-out infinite;
 }
 
 p {
@@ -26,4 +27,14 @@ p {
 }
 
 
-
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
