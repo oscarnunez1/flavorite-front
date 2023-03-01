@@ -22,7 +22,7 @@ const NavBar = ({ user, handleLogout }: NavBarProps): JSX.Element => {
         {user ?
           <>
             <li><Link to="/meals">Meals</Link></li>
-            <li><Link to="/meals/new">New Meals</Link></li>
+            <li><Link to="/meals/new">New Meal</Link></li>
             <li>Welcome, {user.name}</li>
             <li><Link to="/" onClick={handleLogout}>LOG OUT</Link></li>
           </>
