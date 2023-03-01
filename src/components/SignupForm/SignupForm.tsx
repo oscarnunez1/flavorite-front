@@ -67,6 +67,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
       <div className={styles.inputContainer}>
         <label htmlFor="name" className={styles.label}>Name</label>
         <input
+          required
           type="text"
           id="name"
           value={name}
@@ -79,6 +80,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
           Email
         </label>
         <input
+          required
           type="text"
           id="email"
           value={email}
@@ -91,6 +93,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
           Password
         </label>
         <input
+          required
           type="password"
           id="password"
           value={password}
@@ -103,6 +106,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
           Confirm Password
         </label>
         <input
+          required
           type="password"
           id="confirm"
           value={passwordConf}
@@ -115,6 +119,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
           Upload Photo
         </label>
         <input
+          required
           type="file"
           id="photo-upload"
           name="photo"

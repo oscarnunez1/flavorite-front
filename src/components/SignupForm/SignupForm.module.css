@@ -71,6 +71,7 @@ input[type="file"] {
   border: none;
   background: none;
   margin-bottom: 24px;
+  resize: none;
 }
 
 input::file-selector-button {

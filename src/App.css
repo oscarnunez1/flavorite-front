@@ -24,12 +24,12 @@ h3 {
   font-weight: 300;
 }
 
-p, a, li, button, ul {
+/* p, a, li, button, ul {
   margin: 0;
   padding: 0;
   line-height: normal;
   text-decoration: none;
-}
+} */
 
 a:hover {
   text-decoration: none;
@@ -44,17 +44,3 @@ input:focus, textarea:focus, select:focus {
   outline: none;
 }
 
-@media only screen and (max-width: 767px) {
-  main {
-    max-width: 100%;
-    padding: 0 30px;
-    transform: scale(1);
-  }
-}
-
-@media (min-width:1700px) {
-	main {
-		max-width: 100%;
-		padding: 0 150px;
-	}
-}
