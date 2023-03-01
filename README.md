@@ -6,6 +6,16 @@ Flavorite is a web application that allows users to create, view, update, and de
 
 ## Getting Started
 
+📒 Take a look at my [Trello Board](https://trello.com/b/lOlCufEk/flavorite-app) to see how I started planning Flavorite.
+
+## Want to test the app?
+
+🖥️ [Flavorite](https://flavorite.netlify.app/)
+
+## GitHub Backend Repo 🔽
+
+⬅️ [Flavorite Backend](https://github.com/CaptMerica/pix-back-end.git)
+
 ## Technologies used 💾
 ![Postgres](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
@@ -35,6 +45,7 @@ Flavorite is a web application that allows users to create, view, update, and de
 - Logo and label added to app.
 - Edit and delete abilties for logged in users.
 - Navbar buttons for smoother navigation.
+- Floating logo animation added to the landing page.
 
 ## Ice Box 🧊
 - [ ] Ability to add likes to a meal.
