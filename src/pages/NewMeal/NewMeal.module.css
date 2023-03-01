@@ -29,7 +29,9 @@
 }
 
 .container button {
-  color: white;
+  color: black;
+  border: 1px solid lightslategray;
+  padding: 1rem;
   font-weight: 600;
   margin: 21px 0px 0px 0px;
   background: var(--primary);

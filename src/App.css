@@ -46,16 +46,9 @@ img {
   height: auto;
 }
 
-button {
-  border: 0;
-  border-radius: 4px;
-  /* background-color: transparent; */
-}
-
 input:focus, textarea:focus, select:focus {
   outline: none;
 }
-
 
 @media only screen and (max-width: 767px) {
   main {

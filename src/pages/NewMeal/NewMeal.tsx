@@ -33,36 +33,39 @@ const NewMeal: React.FC<NewMealProps> = ({ handleAddMeal }) => {
   };
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit} className={styles.container}>
-      <label>
-        Name:
+    <main className={styles.container}>
+      <h1>New Meal</h1>
+      <form autoComplete="off" onSubmit={handleSubmit}>
+        <label htmlFor="name-input">Name:</label>
         <input
+          required
           type="text"
           value={form.name}
           onChange={handleChange}
           name="name"
+          id="name-input"
         />
-      </label>
-      <label>
-        Description:
+        <label htmlFor="description-input">Description:</label>
         <input
+          required
           type="text"
           value={form.description}
           onChange={handleChange}
           name="description"
+          id="description-input"
         />
-      </label>
-      <label>
-        Photo URL:
+        <label htmlFor="photo-input">Photo URL:</label>
         <input
+          required
           type="text"
           value={form.photo}
           onChange={handleChange}
           name="photo"
+          id="photo-input"
         />
-      </label>
-      <button type="submit">Create Meal</button>
-    </form>
+        <button type="submit">Create Meal</button>
+      </form>
+    </main>
   );
 };
 

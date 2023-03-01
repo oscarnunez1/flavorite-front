@@ -5,10 +5,13 @@ nav {
   background-color: #ffffff;
   padding: 10px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 nav img {
-  width: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 nav ul {
@@ -63,10 +66,15 @@ nav ul:last-child li a:hover {
   cursor: pointer;
 }
 
+nav main {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .navbar-label {
   height: 50px;
   margin-left: 10px;
   margin-top: 5px;
-  width: 200px;
+  width: 250px;
 }
 

@@ -22,16 +22,19 @@ const MealCard = (props: MealCardProps): JSX.Element => {
   return (
     <article className={styles.container}>
       <img src={meal.photo} alt={`${meal.name}'s image`} />
-      <img src={profilePic} alt={`${meal.profile.name}'s avatar`} />
-      <h1>{meal.name}</h1>
-      <h3>{meal.description}</h3>
+      <div className={styles.footer}>
+        <div className={styles.author}>
+          <img src={profilePic} alt={`${meal.profile.name}'s avatar`} />
+          <h1>{meal.name}</h1>
+        </div>
+      </div>
+      <p>{meal.description}</p>
       {meal.profile.id === user?.profile.id && (
-        <>
+        <div className={styles.btnContainer}>
           <Link type='button' to={`/meals/${meal.id}/edit`} state={{meal}}>Edit Meal</Link>
           <button onClick={() => handleDeleteMeal(meal.id)}>Delete</button>
-        </>
+        </div>
       )}
-
     </article>
   )
 }

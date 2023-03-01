@@ -12,7 +12,7 @@ interface NavBarProps {
 const NavBar = ({ user, handleLogout }: NavBarProps): JSX.Element => {
   return (
     <nav>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <Link to="/">
           <img src={logo} alt="logo" />
         </Link>
@@ -22,7 +22,7 @@ const NavBar = ({ user, handleLogout }: NavBarProps): JSX.Element => {
         {user ?
           <>
             <li><Link to="/meals">Meals</Link></li>
-            <li><Link to="/new-meals">New Meals</Link></li>
+            <li><Link to="/meals/new">New Meals</Link></li>
             <li>Welcome, {user.name}</li>
             <li><Link to="/" onClick={handleLogout}>LOG OUT</Link></li>
           </>
