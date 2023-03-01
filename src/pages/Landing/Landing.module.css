@@ -55,9 +55,45 @@
   }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 767px) {
+  .container {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .logoContainer {
+    margin-bottom: 20px;
+  }
+
+  .welcome {
+    font-size: 50px;
+  }
+
+  .floatingLogo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+
+  .label {
+    width: 500px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+  
+  .message {
+    text-align: center;
+  }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
   .container {
     margin-bottom: 100px;
+    transition: 1s ease-in-out;
   }
 
   .logoContainer {
