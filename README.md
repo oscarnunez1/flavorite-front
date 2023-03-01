@@ -14,7 +14,7 @@ Flavorite is a web application that allows users to create, view, update, and de
 
 ## GitHub Backend Repo 🔽
 
-⬅️ [Flavorite Backend](https://github.com/CaptMerica/pix-back-end.git)
+⬅️ [Flavorite Backend](https://github.com/oscarnunez1/flavorite-back)
 
 ## Technologies used 💾
 ![Postgres](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
