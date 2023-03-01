@@ -75,7 +75,7 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
         <button disabled={isFormInvalid()} className={styles.button}>
           Log In
         </button>
-        <Link to="/">
+        <Link to="/meals">
           <button>Cancel</button>
         </Link>
       </div>

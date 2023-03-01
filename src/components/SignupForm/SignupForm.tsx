@@ -133,7 +133,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
         >
           {!isSubmitted ? "Sign Up" : "🚀 Sending..."}
         </button>
-        <Link to="/">
+        <Link to="/meals">
           <button>Cancel</button>
         </Link>
       </div>
