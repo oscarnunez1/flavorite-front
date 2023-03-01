@@ -6,18 +6,12 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 75px;
-}
-
 body {
   font-weight: 400;
-  overflow-x: hidden;
-  position: relative;
   background-color: whitesmoke !important;
   color: black !important;
   font-family: 'Montserrat', sans-serif;
+  margin-top: 75px !important;
 }
 
 h1, h2, h3, h4, h5, h6 {

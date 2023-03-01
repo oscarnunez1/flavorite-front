@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin-bottom: 300px;
 }
 
 .logoContainer {
@@ -21,12 +22,6 @@
   animation: float 1.5s ease-in-out infinite;
 }
 
-p {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -38,3 +33,27 @@ p {
     transform: translatey(0px);
   }
 }
+
+.label {
+  width: 1000px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(237, 201, 88, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+

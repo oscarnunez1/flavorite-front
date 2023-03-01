@@ -7,6 +7,11 @@ nav {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
   overflow-y: scroll;
   overflow-x: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 97%;
 }
 
 nav img {
@@ -16,28 +21,12 @@ nav img {
 
 nav ul {
   list-style: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
 }
 
 nav ul li {
-  margin-left: 15px;
-}
-
-nav ul li:first-child {
-  margin-left: 0;
-}
-
-nav ul li a {
   color: #222222;
   text-decoration: none;
   font-weight: 600;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
 }
 
 nav ul:last-child {
@@ -58,12 +47,13 @@ nav ul:last-child li:first-child {
 nav ul:last-child li a {
   color: #222222;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 nav ul:last-child li a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
+  color: lightslategray;
 }
 
 nav main {

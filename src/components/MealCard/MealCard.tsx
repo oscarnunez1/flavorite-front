@@ -21,11 +21,12 @@ const MealCard = (props: MealCardProps): JSX.Element => {
 
   return (
     <article className={styles.container}>
+      <h1>{meal.name}</h1>
       <img src={meal.photo} alt={`${meal.name}'s image`} />
       <div className={styles.footer}>
         <div className={styles.author}>
           <img src={profilePic} alt={`${meal.profile.name}'s avatar`} />
-          <h1>{meal.name}</h1>
+          <h1>{meal.profile.name}</h1>
         </div>
       </div>
       <p>{meal.description}</p>

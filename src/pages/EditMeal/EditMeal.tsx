@@ -33,10 +33,10 @@ const EditMealForm = (props: EditMealProps): JSX.Element => {
   };
 
   return (
-    <main className={styles.container}>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name</label>
+    <>
+      <form onSubmit={handleSubmit} className={styles.container}>
+        <div className={styles.inputContainer}>
+          <label htmlFor="name" className={styles.label}>Name</label>
           <input
             type="text"
             value={formData.name}
@@ -45,8 +45,8 @@ const EditMealForm = (props: EditMealProps): JSX.Element => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="description">Description</label>
+        <div className={styles.inputContainer}>
+          <label htmlFor="description" className={styles.label}>Description</label>
           <textarea
             value={formData.description}
             name="description"
@@ -54,8 +54,8 @@ const EditMealForm = (props: EditMealProps): JSX.Element => {
             required
           ></textarea>
         </div>
-        <div>
-          <label htmlFor="photo-upload">Upload Photo</label>
+        <div className={styles.inputContainer}>
+          <label htmlFor="photo-upload" className={styles.label}>Upload Photo</label>
           <input
             type="url"
             value={formData.photo}
@@ -65,10 +65,10 @@ const EditMealForm = (props: EditMealProps): JSX.Element => {
           />
         </div>
         <div>
-          <button type="submit">Save</button>
+          <button type="submit" className={styles.button}>Save</button>
         </div>
       </form>
-    </main>
+    </>
   );
 };
 

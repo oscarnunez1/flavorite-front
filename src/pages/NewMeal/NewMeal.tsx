@@ -33,44 +33,47 @@ const NewMeal: React.FC<NewMealProps> = ({ handleAddMeal }) => {
   };
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit} className={styles.container}>
-      <div className={styles.inputContainer}>
-        <label htmlFor="name-input" className={styles.label}>Name:</label>
-        <input
-          required
-          type="text"
-          value={form.name}
-          onChange={handleChange}
-          name="name"
-          id="name-input"
-        />
-      </div>  
-      <div className={styles.inputContainer}>
-        <label htmlFor="description-input" className={styles.label}>Description:</label>
-        <input
-          required
-          type="text"
-          value={form.description}
-          onChange={handleChange}
-          name="description"
-          id="description-input"
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="photo-input" className={styles.label}>Photo URL:</label>
-        <input
-          required
-          type="text"
-          value={form.photo}
-          onChange={handleChange}
-          name="photo"
-          id="photo-input"
-        />
-      </div>
-      <div>
-        <button type="submit" className={styles.button}>Create Meal</button>
-      </div>
-    </form>
+    <>
+      <h1 className={styles.title}>New Meal</h1>
+      <form autoComplete="off" onSubmit={handleSubmit} className={styles.container}>
+        <div className={styles.inputContainer}>
+          <label htmlFor="name-input" className={styles.label}>Name:</label>
+          <input
+            required
+            type="text"
+            value={form.name}
+            onChange={handleChange}
+            name="name"
+            id="name-input"
+          />
+        </div>  
+        <div className={styles.inputContainer}>
+          <label htmlFor="description-input" className={styles.label}>Description:</label>
+          <input
+            required
+            type="text"
+            value={form.description}
+            onChange={handleChange}
+            name="description"
+            id="description-input"
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="photo-input" className={styles.label}>Photo URL:</label>
+          <input
+            required
+            type="text"
+            value={form.photo}
+            onChange={handleChange}
+            name="photo"
+            id="photo-input"
+          />
+        </div>
+        <div>
+          <button type="submit" className={styles.button}>Create Meal</button>
+        </div>
+      </form>
+    </>
   );
 };
 

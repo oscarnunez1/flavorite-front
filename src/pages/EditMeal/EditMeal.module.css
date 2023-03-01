@@ -1,84 +1,51 @@
-.container {
-  border: 1px solid var(--border);
+body form {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
+  align-items: center;  
+}
+
+textarea {
+  resize: none;
+  padding: 10px;
+  outline: none;
 }
 
 .container {
-  padding: 28px 21px;
+  width: 100%;
   display: flex;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 5px;
+  margin: 50px auto;
   flex-direction: column;
-  align-items: center;
-}
-
-.container input, textarea, select, button { 
-  width: 100%;
-  padding: 14px;
-  font-size: 14px;
-  max-height: 100px;
-  overflow: auto;
-  resize: none;
-  border-radius: 5px;
-  margin: 7px 0px 14px 0px;
+  background-color: white;
   border: 1px solid var(--border);
-  font-family: canada-type-gibson, sans-serif;
+  box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.25);
 }
 
-.container label {
-  font-weight: 600;
-  margin: 7px 0px 14px 0px;
+.inputContainer {
+  width: 100%;
+  display: flex;
+  margin-bottom: .25rem;
+  flex-direction: column;
 }
 
 .container button {
   color: white;
-  font-weight: 600;
-  margin: 21px 0px 0px 0px;
-  background: var(--primary);
-}
-
-.container a {
-  border: none;
-  font-size: 14px;
-  background: none;
-  font-weight: 500;
-  margin-top: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 900;
+  margin-bottom: 10px;
+  border-radius: 5px;
   text-align: center;
-  color: rgb(200, 200, 200);
+  background: lightslategray;
+  border: 1px solid black;
+  padding: 10px 24px 10px 24px;
 }
 
-input:focus, select:focus {
-  outline: none;
-  border: 1px solid var(--primary);
-}
-
-.container input, textarea, select, button { 
-  width: 100%;
-  padding: 14px;
-  font-size: 14px;
-  max-height: 100px;
-  overflow: auto;
-  resize: none;
-  border-radius: 5px;
-  margin: 7px 0px 14px 0px;
-  border: 1px solid var(--border);
-  font-family: canada-type-gibson, sans-serif;
-}
-
-.container label {
-  font-weight: 600;
-  margin: 7px 0px 14px 0px;
-}
-
-.container button {
-  color: white;
-  font-weight: 600;
-  margin: 21px 0px 0px 0px;
-  background: var(--primary);
-}
-
-input:focus, select:focus {
-  outline: none;
-  border: 1px solid var(--primary);
+.title {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
