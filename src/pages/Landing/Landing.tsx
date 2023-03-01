@@ -13,7 +13,7 @@ const Landing = (): JSX.Element => {
         <img src={label} alt="flavorite" className={styles.label} />
       </div>
       <img src={logo} alt="flavorite Logo" className={styles.floatingLogo} />
-      <h3 className={styles.message}>Share images of your favorite meals from restaurants and keep track of your culinary adventures.</h3>
+      <h3 className={styles.message}>Share images of your favorite meals and keep track of your culinary adventures.</h3>
     </main>
   )
 }
