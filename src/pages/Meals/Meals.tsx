@@ -15,7 +15,8 @@ const Meals = (props: MealProps): JSX.Element => {
   const { meals, handleDeleteMeal, user } = props
   
 
-  if (!meals.length) return <h2>Loading</h2>
+  if (!meals.length) return <div className={styles.loadingContainer}><h2 className={styles.loading}>Loading...</h2></div>
+
 
   return (
     <div className={styles.container}>
