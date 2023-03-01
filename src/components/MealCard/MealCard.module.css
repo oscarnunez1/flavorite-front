@@ -74,6 +74,7 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  
 }
 
 .btnContainer > * {
@@ -86,6 +87,10 @@ a {
   color: white;
   border-radius: .25rem;
   transition: all .25s;
+}
+
+a {
+  text-decoration: none;
 }
 
 .btnContainer > *:hover {
