@@ -3,6 +3,10 @@ article h1 {
   margin-right: 5px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   width: 100%;
   padding: 14px 21px;
