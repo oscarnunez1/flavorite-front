@@ -33,10 +33,9 @@ const NewMeal: React.FC<NewMealProps> = ({ handleAddMeal }) => {
   };
 
   return (
-    <main className={styles.container}>
-      <h1>New Meal</h1>
-      <form autoComplete="off" onSubmit={handleSubmit}>
-        <label htmlFor="name-input">Name:</label>
+    <form autoComplete="off" onSubmit={handleSubmit} className={styles.container}>
+      <div className={styles.inputContainer}>
+        <label htmlFor="name-input" className={styles.label}>Name:</label>
         <input
           required
           type="text"
@@ -45,7 +44,9 @@ const NewMeal: React.FC<NewMealProps> = ({ handleAddMeal }) => {
           name="name"
           id="name-input"
         />
-        <label htmlFor="description-input">Description:</label>
+      </div>  
+      <div className={styles.inputContainer}>
+        <label htmlFor="description-input" className={styles.label}>Description:</label>
         <input
           required
           type="text"
@@ -54,7 +55,9 @@ const NewMeal: React.FC<NewMealProps> = ({ handleAddMeal }) => {
           name="description"
           id="description-input"
         />
-        <label htmlFor="photo-input">Photo URL:</label>
+      </div>
+      <div className={styles.inputContainer}>
+        <label htmlFor="photo-input" className={styles.label}>Photo URL:</label>
         <input
           required
           type="text"
@@ -63,9 +66,11 @@ const NewMeal: React.FC<NewMealProps> = ({ handleAddMeal }) => {
           name="photo"
           id="photo-input"
         />
-        <button type="submit">Create Meal</button>
-      </form>
-    </main>
+      </div>
+      <div>
+        <button type="submit" className={styles.button}>Create Meal</button>
+      </div>
+    </form>
   );
 };
 

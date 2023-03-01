@@ -1,53 +1,40 @@
-.container {
-  height: 100%;
+body form {
   display: flex;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  padding: 28px 21px;
-  align-items: center;
+  justify-content: center;
+  align-items: center;  
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  margin: 100px auto;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid var(--border);
+  box-shadow: -1px 5px 19px -5px rgba(0, 0, 0, 0.25);
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+  margin-bottom: .25rem;
   flex-direction: column;
 }
 
-.container input, textarea, select, button { 
-  width: 100%;
-  padding: 14px;
-  font-size: 14px;
-  resize: vertical;
-  border-radius: 5px;
-  margin: 7px 0px 14px 0px;
-  border: 1px solid var(--border);
-  font-family: canada-type-gibson, sans-serif;
-}
-
-.container textarea {
-  min-height: 50px;
-}
-
-.container label {
-  font-weight: 600;
-  margin: 7px 0px 14px 0px;
-}
-
 .container button {
-  color: black;
-  border: 1px solid lightslategray;
-  padding: 1rem;
-  font-weight: 600;
-  margin: 21px 0px 0px 0px;
-  background: var(--primary);
-}
-
-.container a {
-  border: none;
-  font-size: 14px;
-  background: none;
-  font-weight: 500;
-  margin-top: 14px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 900;
+  margin-bottom: 10px;
+  border-radius: 5px;
   text-align: center;
-  color: rgb(200, 200, 200);
+  background: lightslategray;
+  border: 1px solid black;
+  padding: 10px 24px 10px 24px;
 }
 
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border: 1px solid var(--primary);
-}
